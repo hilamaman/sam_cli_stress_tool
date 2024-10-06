@@ -104,10 +104,10 @@ class DomainsQuery:
             except KeyboardInterrupt:
                 logger.error('Test stopped due to keyboard interrupt')
             finally:
+                duration = time.time() - start_time
                 for future in futures:
                     future.cancel()
                 executor.shutdown(wait=True)
 
-        duration = time.time() - start_time
         logger.info(f'Stress test completed in {duration} seconds')
         return results, duration

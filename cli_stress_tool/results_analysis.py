@@ -52,7 +52,7 @@ class ResultsAnalysis:
         logger.info('Printing test results..')
         print("Test is over!")
         print("Reason: timeout" if self.duration >= timeout else "Reason: keyboard interrupt")
-        print(f"Time in total: {self.duration: .2f} seconds")
+        print(f"Time in total: {self.duration:.2f} seconds")
         print(f"Requests in total: {self.analysis['total_request']}")
         print(f"Successful requests in total: {self.analysis['successful_requests']}")
         print(f"Failed requests in total: {self.analysis['failed_requests']}")
